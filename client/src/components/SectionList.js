@@ -229,4 +229,4 @@ SectionList.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(SectionList);
+export default withRouter(withStyles(styles)(SectionList));
