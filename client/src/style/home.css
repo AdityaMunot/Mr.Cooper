@@ -1,8 +1,6 @@
-.App {
-    text-align: center;
-    height: 100vh;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Main {
+    height: 90vh;
+    background-color: white;
+    border-radius: 10px;
+    margin: 72px 0px 5px 0px;
   }

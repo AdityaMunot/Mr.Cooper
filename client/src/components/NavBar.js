@@ -25,7 +25,13 @@ class NavBar extends React.Component {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <Link className="nav-link font-weight-normal text-white" to="/dashboard"> DashBoard </Link>
+                                <Link className="nav-link font-weight-normal text-white" to="/grid"> Scheduler </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link font-weight-normal text-white" to="/map"> Map </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link font-weight-normal text-white" to="/dashboard"> Dashboard </Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link font-weight-normal text-light" to="/login" onClick= {this.sessionOut(sessionStorage)}> {sessionvalue} </Link>

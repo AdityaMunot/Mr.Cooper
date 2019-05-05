@@ -6,6 +6,7 @@ import '../style/login.css';
 import DashBoard from './DashBoard';
 import NavBar from './NavBar';
 
+
 class Login extends Component {
   state = {
     loggedIn: false,
@@ -117,9 +118,6 @@ class Login extends Component {
                 <div className="other-links">
                   <div className="link">
                     Forgot password?
-                  </div>
-                  <div className="link">
-                    Register here
                   </div>
                 </div>
                 {
