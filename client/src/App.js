@@ -5,6 +5,9 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Maps from './components/Map';
 import MyGrid from './components/mygrid';
+import ExploreCourses from './components/ExploreCourses';
+import MyCourses from './components/MyCourses';
+import CourseInfo from './components/CourseInfo';
 import { Provider } from 'react-redux';
 import store from './store/index';
 
@@ -19,6 +22,9 @@ class App extends React.Component {
             <Route path='/login' exact={true} component={Login}/>
             <Route path='/map' exact={true} component={Maps}/>
             <Route path="/grid" component={MyGrid} />
+            <Route path="/explore" component={ExploreCourses} />
+            <Route path="/courses" component={MyCourses} />
+            <Route path="/moreinfo/:course_name" component={CourseInfo} />
         </div>
         </Provider>
       </BrowserRouter>

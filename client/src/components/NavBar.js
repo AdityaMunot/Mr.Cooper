@@ -28,6 +28,9 @@ class NavBar extends React.Component {
                                 <Link className="nav-link font-weight-normal text-white" to="/grid"> Scheduler </Link>
                             </li>
                             <li className="nav-item">
+                                <Link className="nav-link font-weight-normal text-white" to="/explore"> Explore Course </Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link className="nav-link font-weight-normal text-white" to="/map"> Map </Link>
                             </li>
                             <li className="nav-item">

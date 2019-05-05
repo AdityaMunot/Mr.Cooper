@@ -2,24 +2,22 @@ import React , { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
-import Link from '@material-ui/core/Link';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Avatar from '@material-ui/core/Avatar';
+
 import deepPurple from '@material-ui/core/colors/deepPurple';
 
 import green from '@material-ui/core/colors/green';
 
 import CoursePanel from './CoursePanel';
 import { getCoursesFromOffset } from '../actions/index';
+import NavBar from './NavBar';
 
 const styles = theme => ({
   layout: {
+    marginTop: '72px',
     width: 'auto',
     marginLeft: theme.spacing.unit * 3,
     marginRight: theme.spacing.unit * 3,
@@ -76,14 +74,6 @@ const styles = theme => ({
   },
 });
 
-const sections = [
-  {link: '/grid', label: 'Scheduling'},
-  {link: '/courses', label: 'Profile'},
-  {link: '/explore', label: 'Explore Course'},
-  {link: '/grid', label: 'Opinion'},
-  {link: '/grid', label: 'About'},
-];
-
 function mapDispatchToProps(dispatch) {
   return {
     getCoursesFromOffset: offset => dispatch(getCoursesFromOffset(offset))
@@ -138,45 +128,11 @@ class ConnectedExploreCourses extends Component  {
     render () {
       const { classes } = this.props;
 
-      const student_name = sessionStorage.getItem('student_name');
-      const matches = student_name.match(/\b(\w)/g);
-      const avatar_title = matches.join('');
-
       return(
+            <div>
+              <NavBar/>
               <React.Fragment key={'course'}>
-                <CssBaseline />
-                <div className={classes.layout}>
-                  <Toolbar className={classes.toolbarMain}>
-                    <Grid container justify="center" alignItems="center">
-                      <Typography
-                        variant="h2"
-                        component="h4"
-                        color="inherit"
-                        align="center"
-                        noWrap
-                        className={classes.toolbarTitle}
-                      >
-                        My University
-                      </Typography>
-                      <Typography
-                        component="h4"
-                        color="inherit"
-                        align="right"
-                        noWrap
-                        className={classes.toolbarTitle}
-                      >
-                        Welcome {student_name} !
-                      </Typography>
-                      <Avatar className={classes.purpleAvatar}>{avatar_title}</Avatar>
-                    </Grid>
-                  </Toolbar>
-                  <AppBar className={classes.appbar} position='static'>
-                      <Toolbar variant="dense" className={classes.toolbarSecondary}>
-                          {sections.map(section => (
-                            <Link href={section.link} key={section.label} underline={'none'} color={'textSecondary'}> {section.label} </Link>
-                          ))}
-                      </Toolbar>
-                  </AppBar>
+                <div className={classes.layout}>                 
                   <main>
                     <Grid container spacing={24} className={classes.mainGrid}>
                       <Grid item xs={12} md={12}>
@@ -194,14 +150,8 @@ class ConnectedExploreCourses extends Component  {
                     </Grid>
                   </main>
                 </div>
-                {/* Footer */}
-                <footer className={classes.footer}>
-                  <Typography variant="h6" align="center" gutterBottom>
-                    Welcome to My University
-                  </Typography>
-                </footer>
-                {/* End footer */}
               </React.Fragment>
+            </div>
         );
     }
 
