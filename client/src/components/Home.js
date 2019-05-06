@@ -9,27 +9,52 @@ class Home extends React.Component {
         return (
             <div className="container">
                 <Navbar />
-                <div className="container Main">
-                    <h1>Mr. Cooper</h1>
+                <div className="Main">
+                    <h2>Meet The Team</h2>
                     <hr />
-                    <h4> Developed By:</h4>
-                    <div className="d-inline-block col-lg-2 offset-lg-1">
-                        <h3>inline-block</h3>
-                        <p> Aditya Munot </p>
+                    <div className="row">
+                        <div className="column">
+                            <div className="card">
+                                <img src="aditya1.jpg" alt="Aditya Munot" style={{width:"100%"}}/>
+                                <div className="container">
+                                    <h3>Aditya Munot</h3>
+                                    <p className="title">Co - Founder</p>
+                                    <p><button className="button">Contact</button></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="column">
+                            <div className="card">
+                                <img src="dariel.jpg" alt="Dariel Bobadilla" style={{width:"100%"}}/>
+                                <div className="container">
+                                    <h3>Dariel Bobadilla</h3>
+                                    <p className="title">Co - Founder</p>
+                                    <p><button className="button">Contact</button></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="column">
+                            <div className="card">
+                                <img src="vineet.jpg" alt="Vineet Singh" style={{width:"100%"}}/>
+                                <div className="container">
+                                    <h3>Vineet Singh</h3>
+                                    <p className="title">Co - Founder</p>
+                                    <p><button className="button">Contact</button></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="column">
+                            <div className="card">
+                                <img src="srikanth.jpg" alt="Srikanth Kamath" style={{width:"100%"}}/>
+                                <div className="container">
+                                    <h3>Srikanth Kamath</h3>
+                                    <p className="title">Co - Founder</p>
+                                    <p><button className="button">Contact</button></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="d-inline-block col-lg-2 offset-lg-1">
-                        <h3>inline-block</h3>
-                        <p> Aditya Munot </p>
-                    </div>
-                    <div className="d-inline-block col-lg-2 offset-lg-1">
-                        <h3>inline-block</h3>
-                        <p> Aditya Munot </p>
-                    </div>
-                    <div className="d-inline-block col-lg-2 offset-lg-1">
-                        <h3>inline-block</h3>
-                        <p> Aditya Munot </p>
-                    </div>
-                </div>
+                </div>              
             </div>
         );
     };
