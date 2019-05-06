@@ -67,6 +67,26 @@ class Login extends Component {
               loading: false,
               loggedIn: true,
             });
+            const request = {
+              method : 'POST',
+              body : JSON.stringify({
+                name: username,
+                password: password,
+              }),
+              headers : {"Content-Type" : "application/json"}
+            }
+        
+            fetch("http://localhost:3200/signin", request)
+              .then(res => res.json())
+              .then(data => {
+                console.log(data);
+                if ( data.msg === 'success' ) {
+                  sessionStorage.setItem('student_id', data.student_id);
+                            sessionStorage.setItem('student_name', data.student_name);
+                            
+                  this.props.history.push("/courses");
+                }
+              })
         },
 
         onFailure: (err) => {

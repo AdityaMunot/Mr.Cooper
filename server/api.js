@@ -298,7 +298,7 @@ app.post('/signin', function(req, res) {
 	const name = req.body.name;
 	const password = req.body.password;
 
-	const sql = "SELECT * FROM students WHERE name='" + name + "' AND password=MD5('" + password + "')";
+	const sql = "SELECT * FROM students WHERE email='" + name + "' AND password=MD5('" + password + "')";
 
 	connection1.query(sql, function(err, results, fields) {
 		if (err) {
@@ -419,7 +419,7 @@ app.get('/swap/add', (req, res) => {
         res.send(exp);
     }
 
-    exec('python "D:\\college\\ssw 590\\swapper_final3.py"', (err, stdout, stderr) => {
+    exec('python "swapper_final3.py"', (err, stdout, stderr) => {
         if (!err) {
             console.log(stdout)
         } else {

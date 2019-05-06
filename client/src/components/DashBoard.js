@@ -30,7 +30,7 @@ class DashBoard extends React.Component {
                 <div className="container bg-white border border-warning" style= {{ margin: "72px 0px 10px 0px", borderRadius: 10, padding: "10px 20px 10px 20px"}}>
                 <h4 className="text-warning text-center">Message</h4>    
                 <h1 className="text-center">Authentication required</h1>
-                <h5 className="text-warning text-center">Please login first to access DashBoard</h5>
+                <h5 className="text-warning text-center">Please login first to access Swapper Functionality</h5>
                 </div>
             </div>
         );

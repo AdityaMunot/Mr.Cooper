@@ -18,10 +18,12 @@ import green from '@material-ui/core/colors/green';
 import CoursePanel from './CoursePanel';
 import MyProfile from './MyProfile';
 import { getCoursesFromOffset } from '../actions/index';
+import NavBar from './NavBar';
 
 const styles = theme => ({
   layout: {
     width: 'auto',
+    marginTop: '72px',
     marginLeft: theme.spacing.unit * 3,
     marginRight: theme.spacing.unit * 3,
     [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
@@ -99,85 +101,51 @@ const mapStateToProps = state => {
 };
 
 class ConnectedMyCourses extends Component  {
-
     constructor(props) {
       super(props);
       this.state = { courses: [], total: 0, offset: 0, isLoading: false };
     }
-
     render () {
-      const { classes } = this.props;
-
-      const student_name = sessionStorage.getItem('student_name');
-      const matches = student_name.match(/\b(\w)/g);
-      const avatar_title = matches.join('');
-
-      console.log('My courses rendered.');
-
-      return(
-              <React.Fragment key={'course'}>
-                <CssBaseline />
-                <div className={classes.layout}>
-                  <Toolbar className={classes.toolbarMain}>
-                    <Grid container justify="center" alignItems="center">
-                      <Typography
-                        variant="h2"
-                        component="h4"
-                        color="inherit"
-                        align="center"
-                        noWrap
-                        className={classes.toolbarTitle}
-                      >
-                        My University
-                      </Typography>
-                      <Typography
-                        component="h4"
-                        color="inherit"
-                        align="right"
-                        noWrap
-                        className={classes.toolbarTitle}
-                      >
-                        Welcome {student_name} !
-                      </Typography>
-                      <Avatar className={classes.purpleAvatar}>{avatar_title}</Avatar>
-                    </Grid>
-                  </Toolbar>
-                  <AppBar className={classes.appbar} position='static'>
-                      <Toolbar variant="dense" className={classes.toolbarSecondary}>
-                          {sections.map(section => (
-                            <Link href={section.link} key={section.label} underline={'none'} color={'textSecondary'}> {section.label} </Link>
-                          ))}
-                      </Toolbar>
-                  </AppBar>
-                  <main>
-                    <Grid container spacing={24} className={classes.mainGrid}>
-                        <img src= './university.jpg' alt={'my university'} className={classes.logo} />
-                    </Grid>
-
-                    <Grid container spacing={24} className={classes.mainGrid}>
-                      <Grid item xs={12} md={12}>
-                        <Typography variant="h4" gutterBottom>
-                          My Courses
-                        </Typography>
-                        <Divider />
+      if (sessionStorage.getItem('Access')) {
+        const { classes } = this.props;
+        console.log('My courses rendered.');
+        return(
+              <div>
+                <NavBar />
+                <React.Fragment key={'course'}>
+                  <CssBaseline />
+                  <div className={classes.layout}>
+                    <main>
+                      <Grid container spacing={24} className={classes.mainGrid}>
+                        <Grid item xs={12} md={12}>
+                          <Typography variant="h4" gutterBottom>
+                            My Courses
+                          </Typography>
+                          <Divider />
+                        </Grid>
+                        <Grid item xs={12} md={12}>
+                          <MyProfile />
+                        </Grid>
                       </Grid>
-                      <Grid item xs={12} md={12}>
-                        <MyProfile />
-                      </Grid>
-                    </Grid>
-                  </main>
-                </div>
-                {/* Footer */}
-                <footer className={classes.footer}>
-                  <Typography variant="h6" align="center" gutterBottom>
-                    Welcome to My University
-                  </Typography>
-                </footer>
-                {/* End footer */}
-              </React.Fragment>
+                    </main>
+                  </div>
+                </React.Fragment>
+              </div>
         );
+      }
+      return (
+        <div className="container">
+            <div className="container" >
+                <NavBar />
+            </div>
+            <div className="container bg-white border border-warning" style= {{ margin: "72px 0px 10px 0px", borderRadius: 10, padding: "10px 20px 10px 20px"}}>
+            <h4 className="text-warning text-center">Message</h4>    
+            <h1 className="text-center">Authentication required</h1>
+            <h5 className="text-warning text-center">Please login first to access your Courses </h5>
+            </div>
+        </div>
+      );
     }
-
 }
 
 ConnectedMyCourses.propTypes = {
