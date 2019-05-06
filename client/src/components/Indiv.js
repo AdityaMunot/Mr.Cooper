@@ -21,7 +21,7 @@ class Indiv extends React.Component {
     }
 
     loadLists() {
-        fetch(`http://localhost:4000/individualcourses/${this.state.studentId}`)
+        fetch(`http://localhost:3200/individualcourses/${this.state.studentId}`)
             .then(response => response.json())
             .then(response => {
                 this.state.courses = response
@@ -30,7 +30,7 @@ class Indiv extends React.Component {
             .catch(err => console.error(err));
 
 
-        fetch(`http://localhost:4000/individualexchange/${this.state.studentId}`)
+        fetch(`http://localhost:3200/individualexchange/${this.state.studentId}`)
             .then(response => response.json())
             .then(response => {
                 this.state.exchanges = response
