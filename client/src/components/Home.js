@@ -10,7 +10,10 @@ class Home extends React.Component {
             <div className="container">
                 <Navbar />
                 <div className="Main">
-                    <h2>Meet The Team</h2>
+                    <h2 className="text-center">Objective</h2>
+                    <h4 className="text-center"> "We aim to make the task of choosing and registering for classes as smooth as possible." </h4>
+                    <hr />
+                    <h2 className="text-center">Meet The Team</h2>
                     <hr />
                     <div className="row">
                         <div className="column">

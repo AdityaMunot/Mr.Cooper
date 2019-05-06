@@ -43,7 +43,7 @@ class Swapper extends React.Component {
     }
     render() {
         return (
-            <div className="container bg-white" style={{ margin: "50px 0px 10px 0px", borderRadius: 10, padding: "10px 20px 10px 20px" }}>
+            <div className="container bg-white" style={{ margin: "72px 0px 10px 0px", borderRadius: 10, padding: "10px 20px 10px 20px" }}>
 
                 <h3 className="text-center"> Course Swapper</h3>
                 <hr />

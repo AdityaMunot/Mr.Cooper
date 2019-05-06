@@ -13,7 +13,7 @@ class DashBoard extends React.Component {
                     <div className="container">
                         <NavBar />
                     </div>
-                    <div className="container">
+                    <div className="container" >
                         <Swapper />
                     </div>
                     <div className="container">
