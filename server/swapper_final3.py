@@ -53,8 +53,8 @@ except:
     exit()
 
 
-query_get_studentemail1=f'''select given_name,email from students where student_id = '{ret[0]}'; '''
-query_get_studentemail2=f'''select given_name,email from students where student_id = '{ret[1]}'; '''
+query_get_studentemail1=f'''select name,email from students where id = '{ret[0]}'; '''
+query_get_studentemail2=f'''select name,email from students where id = '{ret[1]}'; '''
 
 cursor.execute(query_get_studentemail1)
 myresult3=cursor.fetchall()
